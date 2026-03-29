@@ -1,0 +1,37 @@
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import Hero from "./components/Hero";
+import Intro from "./components/Intro";
+import Explore from "./components/Explore";
+import Rune from "./components/Rune";
+import Conclusion from "./components/Conclusion";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function App() {
+  useEffect(() => {
+    gsap.utils.toArray(".reveal").forEach((el) => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%"
+        }
+      });
+    });
+  }, []);
+
+  return (
+    <div className="bg-[#051109] text-white overflow-x-hidden">
+      <Hero />
+      <Intro />
+      <Explore />
+      <Rune />
+      <Conclusion />
+    </div>
+  );
+}
