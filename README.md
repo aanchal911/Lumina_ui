@@ -1,117 +1,81 @@
-# Lumina_ui
-# ✨ LUMINA: The Whispering Forest Fairy ✨
+# Lumina: The Whispers of Aethelgard
 
-> *“The forest doesn't sleep; it waits for your step.”*
+An immersive, scroll-driven storytelling experience set in the mystical realm of Aethelgard. Follow the legend of Princess Elara, Guardian of the Ancient Pines, through a cinematic web experience powered by React, Three.js, and Google's Gemini AI.
 
-An immersive, scroll-driven storytelling web experience built for the **Frontend Odyssey Challenge**.  
-This project transforms a simple webpage into a magical journey through a mystical forest guided by a fairy.
+## Features
 
----
+- Scroll-driven narrative with GSAP ScrollTrigger animations
+- Three.js WebGL particle system for ambient magical atmosphere
+- AI-generated ambient music via Google Gemini's Lyria model
+- Parallax imagery, firefly animations, and custom cursor effects
+- Fully responsive layout with a dark fantasy aesthetic
 
-## 🌿 Live Demo
-🔗 https://your-deployment-link.com
+## Tech Stack
 
----
+- React 19 + TypeScript
+- Vite 6
+- Three.js — WebGL particle background
+- GSAP + ScrollTrigger — scroll animations
+- Framer Motion — entrance/exit transitions
+- Tailwind CSS v4
+- Google GenAI SDK (`@google/genai`) — Lyria music generation
+- Lucide React — icons
 
-## 📖 Story Concept
+## Getting Started
 
-**LUMINA** is a fantasy storytelling experience where users explore a hidden forest world filled with magic, ancient runes, and fairy energy.
+### Prerequisites
 
-### 🧚 Narrative Flow (5 Sections)
+- Node.js 18+
 
-1. **Hero – The Threshold**
-   - Enter the mystical forest
-2. **Introduction – The Awakening**
-   - The forest responds to your presence
-3. **Exploration – The Hidden Glade**
-   - Discover magical elements (interactive cards)
-4. **Insight – The Ancient Rune**
-   - Reveal hidden power through interaction
-5. **Conclusion – The Journey Begins**
-   - Final call to action
 
----
+### Setup
 
-## ⚙️ Tech Stack
-
-- **Frontend:** React (Vite)
-- **Styling:** Tailwind CSS
-- **Animations:** GSAP (ScrollTrigger)
-- **Icons:** Lucide React
-
----
-
-## 🎯 Features Implemented
-
-### 🖱️ Scroll-Based Interactions
-- Smooth scroll-triggered animations using GSAP
-- Section-based reveal effects
-
-### 🖐️ Interactive Elements
-- Hover-based interactive cards
-- Glowing rune interaction
-- Call-to-action button
-
-### 🎭 Animations
-- Text reveal animations
-- Hover transitions
-- Glow effects
-
-### 📱 Responsive Design
-- Fully responsive layout
-- Works on mobile, tablet, and desktop
-
----
-
-## 🧩 Project Structure
-lumina-forest/
-├── public/
-│   └── index.html
-├── src/
-│   ├── App.jsx
-│   ├── main.jsx
-│   ├── styles.css
-│   └── components/
-│       ├── Hero.jsx
-│       ├── Intro.jsx
-│       ├── Explore.jsx
-│       ├── Rune.jsx
-│       └── Conclusion.jsx
-├── package.json
-└── tailwind.config.js
----
-
-## 🚀 Installation & Setup
-
-### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/lumina-forest.git
-
 npm install
+```
 
+Copy the example env file and add your API key:
+
+```bash
+cp .env.example .env
+```
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+### Run
+
+```bash
 npm run dev
-🎨 Design Choices
-Color Palette:
-Deep Forest Green → #051109
-Moss Green → #071A0E
-Fairy Gold → #EAB308
-Typography:
-Serif-based font for a magical, historical feel
-🏆 Challenge Requirements Checklist
-Requirement
-Status
-5 Story Sections
-✅
-Scroll Effects
-✅
-3 Interactions
-✅
-3 Animations
-✅
-Responsive Design
-✅
-💡 Future Improvements
-Add custom cursor (fairy dust effect)
-Add background sound/music
-Implement Three.js particle system
-Add dark/light mode toggle
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start dev server on port 3000 |
+| `npm run build` | Production build |
+| `npm run preview` | Preview production build |
+| `npm run lint` | TypeScript type check |
+
+## AI Music Generation
+
+Click the music note icon in the top-right corner to generate a 30-second ethereal ambient track using Gemini's Lyria model. The app will prompt you to select an API key if one isn't already configured. Generated audio plays on loop and can be toggled with the volume button.
+
+## Project Structure
+
+```
+src/
+├── App.tsx              # Main app, all sections and scroll logic
+├── components/
+│   └── ForestWebGL.tsx  # Three.js particle background
+├── index.css            # Global styles and custom utilities
+└── main.tsx             # Entry point
+```
+
+## License
+
+Apache-2.0
